@@ -44,7 +44,7 @@ export default function HeaderForms() {
           <TableCell>Linea</TableCell>
           <TableCell colSpan={6} sx={{ backgroundColor: 'transparent' }}>
             <Stack spacing={1} direction="column" alignItems="center">
-              <RHFRadioGroup row spacing={4} name="turno" options={LINES} />
+              <RHFRadioGroup row spacing={4} name="turno" options={LINES} value={24} />
             </Stack>
           </TableCell>
         </TableRow>

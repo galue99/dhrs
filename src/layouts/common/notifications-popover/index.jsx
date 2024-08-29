@@ -61,7 +61,7 @@ export default function NotificationsPopover() {
 
   const [notifications, setNotifications] = useState(_notifications);
 
-  const totalUnRead = notifications.filter((item) => item.isUnRead === true).length;
+  const totalUnRead = 1;
 
   const handleMarkAllAsRead = () => {
     setNotifications(
@@ -111,7 +111,7 @@ export default function NotificationsPopover() {
                 'default'
               }
             >
-              {tab.count}
+              {1}
             </Label>
           }
           sx={{

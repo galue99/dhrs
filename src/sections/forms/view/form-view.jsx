@@ -115,27 +115,28 @@ export default function FormView( { setStep }) {
         query={search.query}
         results={search.results}
         onSearch={handleSearch}
-        hrefItem={(id) => paths.dashboard.job.details(id)}
       />
 
       <Stack direction="row" spacing={1} flexShrink={0}>
-        <JobFilters
-          open={openFilters.value}
-          onOpen={openFilters.onTrue}
-          onClose={openFilters.onFalse}
-          //
-          filters={filters}
-          onFilters={handleFilters}
-          //
-          canReset={canReset}
-          onResetFilters={handleResetFilters}
-          //
-          locationOptions={countries.map((option) => option.label)}
-          roleOptions={_roles}
-          benefitOptions={JOB_BENEFIT_OPTIONS.map((option) => option.label)}
-          experienceOptions={['all', ...JOB_EXPERIENCE_OPTIONS.map((option) => option.label)]}
-          employmentTypeOptions={JOB_EMPLOYMENT_TYPE_OPTIONS.map((option) => option.label)}
-        />
+       {/*
+         <JobFilters
+            open={openFilters.value}
+            onOpen={openFilters.onTrue}
+            onClose={openFilters.onFalse}
+            //
+            filters={filters}
+            onFilters={handleFilters}
+            //
+            canReset={canReset}
+            onResetFilters={handleResetFilters}
+            //
+            locationOptions={countries.map((option) => option.label)}
+            roleOptions={_roles}
+            benefitOptions={JOB_BENEFIT_OPTIONS.map((option) => option.label)}
+            experienceOptions={['all', ...JOB_EXPERIENCE_OPTIONS.map((option) => option.label)]}
+            employmentTypeOptions={JOB_EMPLOYMENT_TYPE_OPTIONS.map((option) => option.label)}
+          />
+        */}
 
         <JobSort sort={sortBy} onSort={handleSortBy} sortOptions={JOB_SORT_OPTIONS} />
       </Stack>

@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { useCallback } from "react";
 
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
@@ -13,10 +14,22 @@ import { fToNow } from 'src/utils/format-time';
 
 import Label from 'src/components/label';
 import FileThumbnail from 'src/components/file-thumbnail';
+import { useRouter } from "../../../routes/hooks";
+import {paths} from "../../../routes/paths";
 
 // ----------------------------------------------------------------------
 
 export default function NotificationItem({ notification }) {
+  const router = useRouter();
+
+
+  const handleViewRow = useCallback(
+    (id = 'e99f09a7-dd88-49d5-b1c8-1daf80c2d7b1') => {
+      router.push(paths.dashboard.forms.edit(id));
+    },
+    [router]
+  );
+
   const renderAvatar = (
     <ListItemAvatar>
       {notification.avatarUrl ? (
@@ -91,7 +104,7 @@ export default function NotificationItem({ notification }) {
 
   const friendAction = (
     <Stack spacing={1} direction="row" sx={{ mt: 1.5 }}>
-      <Button size="small" variant="contained">
+      <Button size="small" variant="contained" onClick={() => handleViewRow()}>
         Accept
       </Button>
       <Button size="small" variant="outlined">

@@ -38,11 +38,9 @@ export default function FancySignature({ name }) {
 
   return (
     <div className="signature-container">
-      <Typography variant="h6" className="">{name}</Typography>
-      <Typography variant="h6" className="">Signature ID: {hash}</Typography>
+      <Typography variant="h6" className="signature-name" sx={{ fontFamily: 'Great Vibes, cursive;' }}>{name}</Typography>
+      <Typography variant="h6" className="signature-hash" sx={{ fontFamily: 'Courier New, Courier, monospace' }}>Signature ID: {hash}</Typography>
 
-      <p className="signature-name">{name}</p>
-      <p className="signature-hash">Signature ID: {hash}</p>
     </div>
   );
 }

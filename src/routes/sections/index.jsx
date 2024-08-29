@@ -1,13 +1,18 @@
-import { Navigate, useRoutes } from 'react-router-dom';
+import {Navigate, Outlet, useRoutes} from 'react-router-dom';
 
 import MainLayout from 'src/layouts/main';
+import {lazy} from "react";
 
 // import { PATH_AFTER_LOGIN } from 'src/config-global';
 import { authRoutes } from './auth';
 import { authDemoRoutes } from './auth-demo';
-import { HomePage, mainRoutes } from './main';
+import { mainRoutes } from './main';
 import { dashboardRoutes } from './dashboard';
 import { componentsRoutes } from './components';
+import {GuestGuard} from "../../auth/guard";
+import AuthClassicLayout from "../../layouts/auth/classic";
+
+const JwtLoginPage = lazy(() => import('src/pages/auth/jwt/login'));
 
 // ----------------------------------------------------------------------
 
@@ -25,9 +30,11 @@ export default function Router() {
     {
       path: '/',
       element: (
-        <MainLayout>
-          <HomePage />
-        </MainLayout>
+        <GuestGuard>
+          <AuthClassicLayout>
+            <JwtLoginPage />
+          </AuthClassicLayout>
+        </GuestGuard>
       ),
     },
 

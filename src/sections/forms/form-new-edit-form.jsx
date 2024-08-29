@@ -89,7 +89,9 @@ export default function FormNewEditForm({ currentJob, setStep, review }) {
 
   const defaultValues = useMemo(
     () => ({
-      title: currentJob?.title || '',
+      user1: review ? OPTIONS[0] : null,
+      user2: review ? OPTIONS[1] : null,
+      user3: review ? OPTIONS[2] : null,
       content: currentJob?.content || '',
       employmentTypes: currentJob?.employmentTypes || [],
       experience: currentJob?.experience || '1 year exp',
@@ -105,7 +107,7 @@ export default function FormNewEditForm({ currentJob, setStep, review }) {
         negotiable: false,
       },
     }),
-    [currentJob]
+    [currentJob, review]
   );
 
   const methods = useForm({
@@ -280,7 +282,7 @@ export default function FormNewEditForm({ currentJob, setStep, review }) {
               <TableRow>
                 <TableCell sx={{ border: '1px solid gray!important' }} width="20%">
                   <Stack spacing={1} direction="column" alignItems="center">
-                    <RHFRadioGroup row={false} spacing={4} name="turno" options={TURNS} />
+                    <RHFRadioGroup row={false} spacing={4} name="turno" options={TURNS} value={review ? 1 : null} />
                   </Stack>
                 </TableCell>
                 <TableCell colSpan={1} sx={{ border: '1px solid gray!important' }} width="50%">
@@ -288,8 +290,8 @@ export default function FormNewEditForm({ currentJob, setStep, review }) {
                     <Grid item md={4} xs={12}>
                       <Block label="">
                         <RHFAutocomplete
-                          name="autocomplete"
-                          label="Autocomplete"
+                          name="user1"
+                          label="User"
                           options={OPTIONS}
                           getOptionLabel={(option) => option.label}
                           isOptionEqualToValue={(option, value) => option.value === value.value}
@@ -332,8 +334,8 @@ export default function FormNewEditForm({ currentJob, setStep, review }) {
                     <Grid item md={4} xs={12}>
                       <Block label="">
                         <RHFAutocomplete
-                          name="autocomplete"
-                          label="Autocomplete"
+                          name="user2"
+                          label="User"
                           options={OPTIONS}
                           getOptionLabel={(option) => option.label}
                           isOptionEqualToValue={(option, value) => option.value === value.value}
@@ -376,8 +378,8 @@ export default function FormNewEditForm({ currentJob, setStep, review }) {
                     <Grid item md={4} xs={12}>
                       <Block label="">
                         <RHFAutocomplete
-                          name="autocomplete"
-                          label="Autocomplete"
+                          name="user3"
+                          label="User"
                           options={OPTIONS}
                           getOptionLabel={(option) => option.label}
                           isOptionEqualToValue={(option, value) => option.value === value.value}
