@@ -23,19 +23,18 @@ const visuallyHidden = {
 // ----------------------------------------------------------------------
 
 export default function TableHeadCustomForms({
-                                          order,
-                                          orderBy,
-                                          rowCount = 0,
-                                          headLabel,
-                                          numSelected = 0,
-                                          onSort,
-                                          onSelectAllRows,
-                                          sx,
-                                        }) {
+  order,
+  orderBy,
+  rowCount = 0,
+  headLabel,
+  numSelected = 0,
+  onSort,
+  onSelectAllRows,
+  sx,
+}) {
   return (
     <TableHead sx={sx}>
       <TableRow>
-
         {headLabel.map((headCell) => (
           <TableCell
             key={headCell.id}

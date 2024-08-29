@@ -3,7 +3,7 @@ import Stack from '@mui/material/Stack';
 import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
 
-import {useAuthContext} from "../../auth/hooks";
+import { useAuthContext } from '../../auth/hooks';
 
 // ----------------------------------------------------------------------
 
@@ -35,8 +35,6 @@ export default function NavUpgrade() {
             {user?.email}
           </Typography>
         </Stack>
-
-
       </Stack>
     </Stack>
   );

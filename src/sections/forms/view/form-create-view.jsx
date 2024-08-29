@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
 import Container from '@mui/material/Container';
 
 import { useSettingsContext } from 'src/components/settings';
 
-import FormsView from "./form-view";
+import FormsView from './form-view';
 import FormNewEditForm from '../form-new-edit-form';
 import FormNewEditForm2 from '../form-new-edit-form2';
 

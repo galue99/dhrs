@@ -24,8 +24,18 @@ import CustomPopover, { usePopover } from 'src/components/custom-popover';
 export default function JobItem({ job, onView, onEdit, onDelete, setStep }) {
   const popover = usePopover();
 
-  const { id, title, company, createdAt, candidates, experience, employmentTypes, salary, role, text } =
-    job;
+  const {
+    id,
+    title,
+    company,
+    createdAt,
+    candidates,
+    experience,
+    employmentTypes,
+    salary,
+    role,
+    text,
+  } = job;
 
   return (
     <>
@@ -68,7 +78,7 @@ export default function JobItem({ job, onView, onEdit, onDelete, setStep }) {
             alignItems="center"
             sx={{ color: 'primary.main', typography: 'caption' }}
           >
-{/*
+            {/*
             <Iconify width={16} icon="solar:users-group-rounded-bold" />
 */}
             Last Updated {fDate(createdAt)}
@@ -78,20 +88,16 @@ export default function JobItem({ job, onView, onEdit, onDelete, setStep }) {
         <Divider sx={{ borderStyle: 'dashed' }} />
 
         <Box rowGap={1.5} display="grid" gridTemplateColumns="repeat(1, 1fr)" sx={{ p: 3 }}>
-         <Stack
-           spacing={0.5}
-           flexShrink={0}
-           direction="row"
-           alignItems="center"
-           sx={{ color: 'text.disabled', minWidth: 0 }}
-         >
-
-           <Typography variant="caption" >
-             {text}
-           </Typography>
-         </Stack>
-       </Box>
-
+          <Stack
+            spacing={0.5}
+            flexShrink={0}
+            direction="row"
+            alignItems="center"
+            sx={{ color: 'text.disabled', minWidth: 0 }}
+          >
+            <Typography variant="caption">{text}</Typography>
+          </Stack>
+        </Box>
       </Card>
 
       <CustomPopover

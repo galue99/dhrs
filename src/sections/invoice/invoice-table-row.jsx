@@ -43,7 +43,6 @@ export default function InvoiceTableRow({
         </TableCell>
 
         <TableCell sx={{ display: 'flex', alignItems: 'center' }}>
-
           <ListItemText
             disableTypography
             primary={
@@ -51,7 +50,6 @@ export default function InvoiceTableRow({
                 {invoiceNumber}
               </Typography>
             }
-
           />
         </TableCell>
 

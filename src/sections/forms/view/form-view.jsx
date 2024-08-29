@@ -1,7 +1,7 @@
 import orderBy from 'lodash/orderBy';
 import isEqual from 'lodash/isEqual';
 import { useState, useCallback } from 'react';
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
 import Stack from '@mui/material/Stack';
 import Container from '@mui/material/Container';
@@ -27,7 +27,7 @@ import JobList from '../../job/job-list';
 import JobSort from '../../job/job-sort';
 import JobSearch from '../../job/job-search';
 import JobFilters from '../../job/job-filters';
-import {LIST_FORMS} from "../../../assets/data/list_forms";
+import { LIST_FORMS } from '../../../assets/data/list_forms';
 import JobFiltersResult from '../../job/job-filters-result';
 
 // ----------------------------------------------------------------------
@@ -42,7 +42,7 @@ const defaultFilters = {
 
 // ----------------------------------------------------------------------
 
-export default function FormView( { setStep }) {
+export default function FormView({ setStep }) {
   const settings = useSettingsContext();
 
   const openFilters = useBoolean();
@@ -111,14 +111,10 @@ export default function FormView( { setStep }) {
       alignItems={{ xs: 'flex-end', sm: 'center' }}
       direction={{ xs: 'column', sm: 'row' }}
     >
-      <JobSearch
-        query={search.query}
-        results={search.results}
-        onSearch={handleSearch}
-      />
+      <JobSearch query={search.query} results={search.results} onSearch={handleSearch} />
 
       <Stack direction="row" spacing={1} flexShrink={0}>
-       {/*
+        {/*
          <JobFilters
             open={openFilters.value}
             onOpen={openFilters.onTrue}

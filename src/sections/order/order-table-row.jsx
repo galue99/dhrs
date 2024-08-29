@@ -21,7 +21,7 @@ import Iconify from 'src/components/iconify';
 import { ConfirmDialog } from 'src/components/custom-dialog';
 import CustomPopover, { usePopover } from 'src/components/custom-popover';
 
-import {useAuthContext} from "../../auth/hooks";
+import { useAuthContext } from '../../auth/hooks';
 
 // ----------------------------------------------------------------------
 
@@ -32,16 +32,26 @@ export default function OrderTableRow({ row, selected, onViewRow, onSelectRow, o
   const collapse = useBoolean();
   const popover = usePopover();
 
-  const { title, status, text, orderNumber, createdAt, customer, totalQuantity, subTotal, candidates } = row;
-  console.log(candidates)
+  const {
+    title,
+    status,
+    text,
+    orderNumber,
+    createdAt,
+    customer,
+    totalQuantity,
+    subTotal,
+    candidates,
+  } = row;
+  console.log(candidates);
   if (user.role === 'operador' && status === 'pending') {
     return null;
   }
 
   const x = [
-    { id: 1, action: "Creado", name: "Juan Pablo Donalisio", date: "27-08-2024" },
-    { id: 2, action: "Revisado", name: "Edgar Espinetti", date: "27-08-2024" },
-    { id: 3, action: "Aprobado", name: "Jesus German", date: "27-08-2024" },
+    { id: 1, action: 'Creado', name: 'Juan Pablo Donalisio', date: '27-08-2024' },
+    { id: 2, action: 'Revisado', name: 'Edgar Espinetti', date: '27-08-2024' },
+    { id: 3, action: 'Aprobado', name: 'Jesus German', date: '27-08-2024' },
   ];
 
   const renderPrimary = (
@@ -63,11 +73,9 @@ export default function OrderTableRow({ row, selected, onViewRow, onSelectRow, o
           {title}
         </Box>
       </TableCell>
+      <TableCell sx={{ color: 'text.secondary', whiteSpace: 'nowrap' }}>{text}</TableCell>
       <TableCell sx={{ color: 'text.secondary', whiteSpace: 'nowrap' }}>
-          {text}
-      </TableCell>
-      <TableCell sx={{ color: 'text.secondary', whiteSpace: 'nowrap' }}>
-          {candidates[0].name}
+        {candidates[0].name}
       </TableCell>
 
       <TableCell>

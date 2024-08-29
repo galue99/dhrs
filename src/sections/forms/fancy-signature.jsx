@@ -1,7 +1,7 @@
-import {useState, useEffect, useCallback} from "react";
+import { useState, useEffect, useCallback } from 'react';
 
-import Typography from "@mui/material/Typography";
-import PropTypes from "prop-types";
+import Typography from '@mui/material/Typography';
+import PropTypes from 'prop-types';
 
 export default function FancySignature({ name }) {
   const [hash, setHash] = useState('');
@@ -38,9 +38,20 @@ export default function FancySignature({ name }) {
 
   return (
     <div className="signature-container">
-      <Typography variant="h6" className="signature-name" sx={{ fontFamily: 'Great Vibes, cursive;' }}>{name}</Typography>
-      <Typography variant="h6" className="signature-hash" sx={{ fontFamily: 'Courier New, Courier, monospace' }}>Signature ID: {hash}</Typography>
-
+      <Typography
+        variant="h6"
+        className="signature-name"
+        sx={{ fontFamily: 'Great Vibes, cursive;' }}
+      >
+        {name}
+      </Typography>
+      <Typography
+        variant="h6"
+        className="signature-hash"
+        sx={{ fontFamily: 'Courier New, Courier, monospace' }}
+      >
+        Signature ID: {hash}
+      </Typography>
     </div>
   );
 }

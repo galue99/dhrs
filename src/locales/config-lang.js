@@ -46,7 +46,7 @@ export const allLangs = [
       code: 'en-US',
       currency: 'USD',
     },
-  }
+  },
 ];
 
 export const defaultLang = allLangs[0]; // English

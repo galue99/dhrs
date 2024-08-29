@@ -83,7 +83,8 @@ export const _notifications = [...Array(1)].map((_, index) => ({
   isUnRead: _mock.boolean(index),
   createdAt: _mock.time(index),
   title:
-    (index === 0 && `<p><strong>Deja Brady</strong> ha creado un nuevo formulario para revision</p>`) ||
+    (index === 0 &&
+      `<p><strong>Deja Brady</strong> ha creado un nuevo formulario para revision</p>`) ||
     '',
 }));
 

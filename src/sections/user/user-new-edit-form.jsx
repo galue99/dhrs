@@ -30,7 +30,7 @@ import FormProvider, {
   RHFAutocomplete,
 } from 'src/components/hook-form';
 
-import FancySignature from "../forms/fancy-signature";
+import FancySignature from '../forms/fancy-signature';
 
 // ----------------------------------------------------------------------
 

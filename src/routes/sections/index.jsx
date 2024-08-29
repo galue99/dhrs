@@ -1,7 +1,7 @@
-import {Navigate, Outlet, useRoutes} from 'react-router-dom';
+import { Navigate, Outlet, useRoutes } from 'react-router-dom';
 
 import MainLayout from 'src/layouts/main';
-import {lazy} from "react";
+import { lazy } from 'react';
 
 // import { PATH_AFTER_LOGIN } from 'src/config-global';
 import { authRoutes } from './auth';
@@ -9,8 +9,8 @@ import { authDemoRoutes } from './auth-demo';
 import { mainRoutes } from './main';
 import { dashboardRoutes } from './dashboard';
 import { componentsRoutes } from './components';
-import {GuestGuard} from "../../auth/guard";
-import AuthClassicLayout from "../../layouts/auth/classic";
+import { GuestGuard } from '../../auth/guard';
+import AuthClassicLayout from '../../layouts/auth/classic';
 
 const JwtLoginPage = lazy(() => import('src/pages/auth/jwt/login'));
 

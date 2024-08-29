@@ -84,9 +84,6 @@ export const _orders = [...Array(20)].map((_, index) => {
       cardType: 'mastercard',
       cardNumber: '**** **** **** 5678',
     },
-    status:
-      (index % 2 && 'completed') ||
-      (index % 3 && 'pending') ||
-      'completed',
+    status: (index % 2 && 'completed') || (index % 3 && 'pending') || 'completed',
   };
 });

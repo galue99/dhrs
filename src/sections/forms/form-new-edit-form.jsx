@@ -1,7 +1,7 @@
 import * as Yup from 'yup';
 import PropTypes from 'prop-types';
 import { useForm } from 'react-hook-form';
-import {useMemo, useState, useEffect} from 'react';
+import { useMemo, useState, useEffect } from 'react';
 import { yupResolver } from '@hookform/resolvers/yup';
 
 import Box from '@mui/material/Box';
@@ -9,7 +9,7 @@ import Card from '@mui/material/Card';
 import Stack from '@mui/material/Stack';
 import Table from '@mui/material/Table';
 import TableRow from '@mui/material/TableRow';
-import Checkbox from "@mui/material/Checkbox";
+import Checkbox from '@mui/material/Checkbox';
 import Grid from '@mui/material/Unstable_Grid2';
 import TableHead from '@mui/material/TableHead';
 import TableCell from '@mui/material/TableCell';
@@ -31,12 +31,12 @@ import FormProvider, {
   RHFEditor,
   RHFTextField,
   RHFRadioGroup,
-  RHFAutocomplete
+  RHFAutocomplete,
 } from 'src/components/hook-form';
 
-import {fDate} from "../../utils/format-time";
-import {useAuthContext} from "../../auth/hooks";
-import FancySignature from "./fancy-signature";
+import { fDate } from '../../utils/format-time';
+import { useAuthContext } from '../../auth/hooks';
+import FancySignature from './fancy-signature';
 import HeaderForms from '../../components/forms/header-forms';
 
 export const TURNS = [
@@ -55,7 +55,6 @@ const OPTIONS = [
   { value: '4f527f67-8ca5-4226-8a9c-ad1ff6776fed', label: 'Andre Roberts' },
   { value: '425e82b0-062b-4a90-ab4c-0b0e74fb6676', label: 'Tony Kaiser' },
 ];
-
 
 // ----------------------------------------------------------------------
 
@@ -175,34 +174,34 @@ export default function FormNewEditForm({ currentJob, setStep, review }) {
 
   const renderProperties = (
     <Grid xs={12} md={12}>
-        <Stack spacing={3} sx={{ p: 3 }}>
-          <Typography variant="body2" sx={{ mb: 0.5, textAlign: 'center' }}>
-            FM-WI-1776-18 DHR PARA LEUKO PARA LINEAS MANUALES 22, 23 Y 24 REV 06
-          </Typography>
-          <Typography variant="h6" sx={{ color: 'text.secondary', textAlign: 'center' }}>
-            DER PARA LEUKO PARA LINEAS MANUALES 22, 23 Y 24
-          </Typography>
-        </Stack>
-        <div>
-          <HeaderForms />
-          <Box sx={{ height: '10px', position: 'relative' }} />
-          <Table sx={{ minWidth: '100%' }}>
-            <TableHead>
-              <TableRow sx={{ border: '1px solid gray' }}>
-                <TableCell colSpan={12} align="center">
-                  <Typography variant="h6" sx={{ mb: 0.5, textAlign: 'center' }}>
-                    Emisión del Registro de Historial del Dispositivo
-                  </Typography>
-                </TableCell>
-              </TableRow>
-              <TableRow sx={{ border: '1px solid gray' }}>
-                <TableCell width="25%">Preparado Por:</TableCell>
-                <TableCell
-                  width="25%"
-                  sx={{ typography: 'subtitle2', backgroundColor: 'transparent' }}
-                >
-                  <FancySignature name="David Jenkins" />
-                  {/* <Block label="">
+      <Stack spacing={3} sx={{ p: 3 }}>
+        <Typography variant="body2" sx={{ mb: 0.5, textAlign: 'center' }}>
+          FM-WI-1776-18 DHR PARA LEUKO PARA LINEAS MANUALES 22, 23 Y 24 REV 06
+        </Typography>
+        <Typography variant="h6" sx={{ color: 'text.secondary', textAlign: 'center' }}>
+          DER PARA LEUKO PARA LINEAS MANUALES 22, 23 Y 24
+        </Typography>
+      </Stack>
+      <div>
+        <HeaderForms />
+        <Box sx={{ height: '10px', position: 'relative' }} />
+        <Table sx={{ minWidth: '100%' }}>
+          <TableHead>
+            <TableRow sx={{ border: '1px solid gray' }}>
+              <TableCell colSpan={12} align="center">
+                <Typography variant="h6" sx={{ mb: 0.5, textAlign: 'center' }}>
+                  Emisión del Registro de Historial del Dispositivo
+                </Typography>
+              </TableCell>
+            </TableRow>
+            <TableRow sx={{ border: '1px solid gray' }}>
+              <TableCell width="25%">Preparado Por:</TableCell>
+              <TableCell
+                width="25%"
+                sx={{ typography: 'subtitle2', backgroundColor: 'transparent' }}
+              >
+                <FancySignature name="David Jenkins" />
+                {/* <Block label="">
                     <RHFAutocomplete
                       name="autocomplete"
                       label="Preparado por:"
@@ -217,230 +216,239 @@ export default function FormNewEditForm({ currentJob, setStep, review }) {
                       )}
                     />
                   </Block> */}
-                  {fDate(new Date())}</TableCell>
-                <TableCell width="25%">Revisado Por:</TableCell>
-                <TableCell
-                  width="25%"
-                  sx={{ typography: 'subtitle2', backgroundColor: 'transparent' }}
-                >
-                  {signature  && user.role === 'admin' &&
-                    <>
-                      <FancySignature name={user?.displayName}/>
-                      {fDate(new Date())}
-                    </>
-                  }
-                  </TableCell>
-              </TableRow>
-            </TableHead>
-          </Table>
+                {fDate(new Date())}
+              </TableCell>
+              <TableCell width="25%">Revisado Por:</TableCell>
+              <TableCell
+                width="25%"
+                sx={{ typography: 'subtitle2', backgroundColor: 'transparent' }}
+              >
+                {signature && user.role === 'admin' && (
+                  <>
+                    <FancySignature name={user?.displayName} />
+                    {fDate(new Date())}
+                  </>
+                )}
+              </TableCell>
+            </TableRow>
+          </TableHead>
+        </Table>
 
-          <Box sx={{ height: '10px', position: 'relative' }} />
+        <Box sx={{ height: '10px', position: 'relative' }} />
 
-          <Table sx={{ minWidth: '100%' }}>
-            <TableHead>
-              <TableRow sx={{ border: '1px solid gray' }}>
-                <TableCell colSpan={10}>
-                  1. Registro de la máquina ypersonal a trabajar en la línea de Manufactura{' '}
-                </TableCell>
-              </TableRow>
-              <TableRow sx={{ border: '1px solid gray' }}>
-                <TableCell colSpan={10}>
-                  1.1 Escoja el turno haciendo un circulo al que corresponda. Documente el personal
-                  a trabajar en la linea de manufactura. El lider de grupo verificara el
-                  adiestramiento de los empleados trabajando en las líneas de manufactura, si los
-                  empleados estánadiestrados en las operaciones de las lineas. Documentara con una
-                  marca de cotejo (V)enel encasillado luego firma yfecha en RealizadoPor.{' '}
-                </TableCell>
-              </TableRow>
-            </TableHead>
-          </Table>
-          <Table sx={{ minWidth: '100%' }}>
-            <TableHead>
-              <TableRow sx={{ border: '1px solid gray' }}>
-                <TableCell sx={{ border: '1px solid gray!important' }}>
-                  <Stack spacing={1} direction="column" alignItems="center">
-                    <Typography variant="subtitle2" sx={{ textAlign: 'center' }}>
-                      Turno
-                    </Typography>
-                  </Stack>
-                </TableCell>
-                <TableCell colSpan={1} sx={{ border: '1px solid gray!important' }}>
-                  <Stack spacing={1}>
-                    <Typography variant="h6" sx={{ textAlign: 'center' }}>
-                      Nombre Personal de Manufactura
-                    </Typography>
-                  </Stack>
-                </TableCell>
-                <TableCell colSpan={1} sx={{ border: '1px solid gray!important' }}>
-                  <Stack spacing={1} sx={{ height: '100%'}}>
-                    <Typography variant="subtitle2" sx={{ textAlign: "center" }}>Realizado por/Fecha:</Typography>
-                  </Stack>
-                </TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody sx={{ backgroundColor: 'rgba(145, 158, 171, 0.12)' }}>
-              <TableRow>
-                <TableCell sx={{ border: '1px solid gray!important' }} width="20%">
-                  <Stack spacing={1} direction="column" alignItems="center">
-                    <RHFRadioGroup row={false} spacing={4} name="turno" options={TURNS} value={review ? 1 : undefined} />
-                  </Stack>
-                </TableCell>
-                <TableCell colSpan={1} sx={{ border: '1px solid gray!important' }} width="50%">
-                  <Grid container spacing={2}>
-                    <Grid item md={4} xs={12}>
-                      <Block label="">
-                        <RHFAutocomplete
-                          name="user1"
-                          label="User"
-                          options={OPTIONS}
-                          getOptionLabel={(option) => option.label}
-                          isOptionEqualToValue={(option, value) => option.value === value.value}
-                          renderOption={(props, option) => (
-                            <li {...props} key={option.value}>
-                              {option.label}
-                            </li>
-                          )}
-                        />
-                      </Block>
-                      <Block label="">
-                        <RHFAutocomplete
-                          name="autocomplete"
-                          label="User"
-                          options={OPTIONS}
-                          getOptionLabel={(option) => option.label}
-                          isOptionEqualToValue={(option, value) => option.value === value.value}
-                          renderOption={(props, option) => (
-                            <li {...props} key={option.value}>
-                              {option.label}
-                            </li>
-                          )}
-                        />
-                      </Block>
-                      <Block label="">
-                        <RHFAutocomplete
-                          name="autocomplete"
-                          label="User"
-                          options={OPTIONS}
-                          getOptionLabel={(option) => option.label}
-                          isOptionEqualToValue={(option, value) => option.value === value.value}
-                          renderOption={(props, option) => (
-                            <li {...props} key={option.value}>
-                              {option.label}
-                            </li>
-                          )}
-                        />
-                      </Block>
-                    </Grid>
-                    <Grid item md={4} xs={12}>
-                      <Block label="">
-                        <RHFAutocomplete
-                          name="user2"
-                          label="User"
-                          options={OPTIONS}
-                          getOptionLabel={(option) => option.label}
-                          isOptionEqualToValue={(option, value) => option.value === value.value}
-                          renderOption={(props, option) => (
-                            <li {...props} key={option.value}>
-                              {option.label}
-                            </li>
-                          )}
-                        />
-                      </Block>
-                      <Block label="">
-                        <RHFAutocomplete
-                          name="autocomplete"
-                          label="User"
-                          options={OPTIONS}
-                          getOptionLabel={(option) => option.label}
-                          isOptionEqualToValue={(option, value) => option.value === value.value}
-                          renderOption={(props, option) => (
-                            <li {...props} key={option.value}>
-                              {option.label}
-                            </li>
-                          )}
-                        />
-                      </Block>
-                      <Block label="">
-                        <RHFAutocomplete
-                          name="autocomplete"
-                          label="User"
-                          options={OPTIONS}
-                          getOptionLabel={(option) => option.label}
-                          isOptionEqualToValue={(option, value) => option.value === value.value}
-                          renderOption={(props, option) => (
-                            <li {...props} key={option.value}>
-                              {option.label}
-                            </li>
-                          )}
-                        />
-                      </Block>
-                    </Grid>
-                    <Grid item md={4} xs={12}>
-                      <Block label="">
-                        <RHFAutocomplete
-                          name="user3"
-                          label="User"
-                          options={OPTIONS}
-                          getOptionLabel={(option) => option.label}
-                          isOptionEqualToValue={(option, value) => option.value === value.value}
-                          renderOption={(props, option) => (
-                            <li {...props} key={option.value}>
-                              {option.label}
-                            </li>
-                          )}
-                        />
-                      </Block>
-                      <Block label="">
-                        <RHFAutocomplete
-                          name="autocomplete"
-                          label="User"
-                          options={OPTIONS}
-                          getOptionLabel={(option) => option.label}
-                          isOptionEqualToValue={(option, value) => option.value === value.value}
-                          renderOption={(props, option) => (
-                            <li {...props} key={option.value}>
-                              {option.label}
-                            </li>
-                          )}
-                        />
-                      </Block>
-                      <Block label="">
-                        <RHFAutocomplete
-                          name="autocomplete"
-                          label="User"
-                          options={OPTIONS}
-                          getOptionLabel={(option) => option.label}
-                          isOptionEqualToValue={(option, value) => option.value === value.value}
-                          renderOption={(props, option) => (
-                            <li {...props} key={option.value}>
-                              {option.label}
-                            </li>
-                          )}
-                        />
-                      </Block>
-                    </Grid>
-                  </Grid>
-                </TableCell>
-                <TableCell sx={{ border: '1px solid gray!important' }} width="20%">
-                  <Stack spacing={1} direction="column" alignItems="center">
-                    {user.role === 'admin' &&
-                      <FormControlLabel
-                        control={
-                          <Checkbox
-                            name="checkbox2"
-                            onChange={(el) => setSignature(el.target.checked)}
-                          />
-                        }
-                        label="Firmar"
+        <Table sx={{ minWidth: '100%' }}>
+          <TableHead>
+            <TableRow sx={{ border: '1px solid gray' }}>
+              <TableCell colSpan={10}>
+                1. Registro de la máquina ypersonal a trabajar en la línea de Manufactura{' '}
+              </TableCell>
+            </TableRow>
+            <TableRow sx={{ border: '1px solid gray' }}>
+              <TableCell colSpan={10}>
+                1.1 Escoja el turno haciendo un circulo al que corresponda. Documente el personal a
+                trabajar en la linea de manufactura. El lider de grupo verificara el adiestramiento
+                de los empleados trabajando en las líneas de manufactura, si los empleados
+                estánadiestrados en las operaciones de las lineas. Documentara con una marca de
+                cotejo (V)enel encasillado luego firma yfecha en RealizadoPor.{' '}
+              </TableCell>
+            </TableRow>
+          </TableHead>
+        </Table>
+        <Table sx={{ minWidth: '100%' }}>
+          <TableHead>
+            <TableRow sx={{ border: '1px solid gray' }}>
+              <TableCell sx={{ border: '1px solid gray!important' }}>
+                <Stack spacing={1} direction="column" alignItems="center">
+                  <Typography variant="subtitle2" sx={{ textAlign: 'center' }}>
+                    Turno
+                  </Typography>
+                </Stack>
+              </TableCell>
+              <TableCell colSpan={1} sx={{ border: '1px solid gray!important' }}>
+                <Stack spacing={1}>
+                  <Typography variant="h6" sx={{ textAlign: 'center' }}>
+                    Nombre Personal de Manufactura
+                  </Typography>
+                </Stack>
+              </TableCell>
+              <TableCell colSpan={1} sx={{ border: '1px solid gray!important' }}>
+                <Stack spacing={1} sx={{ height: '100%' }}>
+                  <Typography variant="subtitle2" sx={{ textAlign: 'center' }}>
+                    Realizado por/Fecha:
+                  </Typography>
+                </Stack>
+              </TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody sx={{ backgroundColor: 'rgba(145, 158, 171, 0.12)' }}>
+            <TableRow>
+              <TableCell sx={{ border: '1px solid gray!important' }} width="20%">
+                <Stack spacing={1} direction="column" alignItems="center">
+                  <RHFRadioGroup
+                    row={false}
+                    spacing={4}
+                    name="turno"
+                    options={TURNS}
+                    value={review ? 1 : undefined}
+                  />
+                </Stack>
+              </TableCell>
+              <TableCell colSpan={1} sx={{ border: '1px solid gray!important' }} width="50%">
+                <Grid container spacing={2}>
+                  <Grid item md={4} xs={12}>
+                    <Block label="">
+                      <RHFAutocomplete
+                        name="user1"
+                        label="User"
+                        options={OPTIONS}
+                        getOptionLabel={(option) => option.label}
+                        isOptionEqualToValue={(option, value) => option.value === value.value}
+                        renderOption={(props, option) => (
+                          <li {...props} key={option.value}>
+                            {option.label}
+                          </li>
+                        )}
                       />
-                    }
-                  </Stack>
-                </TableCell>
-              </TableRow>
-            </TableBody>
-          </Table>
-        </div>
-      </Grid>
+                    </Block>
+                    <Block label="">
+                      <RHFAutocomplete
+                        name="autocomplete"
+                        label="User"
+                        options={OPTIONS}
+                        getOptionLabel={(option) => option.label}
+                        isOptionEqualToValue={(option, value) => option.value === value.value}
+                        renderOption={(props, option) => (
+                          <li {...props} key={option.value}>
+                            {option.label}
+                          </li>
+                        )}
+                      />
+                    </Block>
+                    <Block label="">
+                      <RHFAutocomplete
+                        name="autocomplete"
+                        label="User"
+                        options={OPTIONS}
+                        getOptionLabel={(option) => option.label}
+                        isOptionEqualToValue={(option, value) => option.value === value.value}
+                        renderOption={(props, option) => (
+                          <li {...props} key={option.value}>
+                            {option.label}
+                          </li>
+                        )}
+                      />
+                    </Block>
+                  </Grid>
+                  <Grid item md={4} xs={12}>
+                    <Block label="">
+                      <RHFAutocomplete
+                        name="user2"
+                        label="User"
+                        options={OPTIONS}
+                        getOptionLabel={(option) => option.label}
+                        isOptionEqualToValue={(option, value) => option.value === value.value}
+                        renderOption={(props, option) => (
+                          <li {...props} key={option.value}>
+                            {option.label}
+                          </li>
+                        )}
+                      />
+                    </Block>
+                    <Block label="">
+                      <RHFAutocomplete
+                        name="autocomplete"
+                        label="User"
+                        options={OPTIONS}
+                        getOptionLabel={(option) => option.label}
+                        isOptionEqualToValue={(option, value) => option.value === value.value}
+                        renderOption={(props, option) => (
+                          <li {...props} key={option.value}>
+                            {option.label}
+                          </li>
+                        )}
+                      />
+                    </Block>
+                    <Block label="">
+                      <RHFAutocomplete
+                        name="autocomplete"
+                        label="User"
+                        options={OPTIONS}
+                        getOptionLabel={(option) => option.label}
+                        isOptionEqualToValue={(option, value) => option.value === value.value}
+                        renderOption={(props, option) => (
+                          <li {...props} key={option.value}>
+                            {option.label}
+                          </li>
+                        )}
+                      />
+                    </Block>
+                  </Grid>
+                  <Grid item md={4} xs={12}>
+                    <Block label="">
+                      <RHFAutocomplete
+                        name="user3"
+                        label="User"
+                        options={OPTIONS}
+                        getOptionLabel={(option) => option.label}
+                        isOptionEqualToValue={(option, value) => option.value === value.value}
+                        renderOption={(props, option) => (
+                          <li {...props} key={option.value}>
+                            {option.label}
+                          </li>
+                        )}
+                      />
+                    </Block>
+                    <Block label="">
+                      <RHFAutocomplete
+                        name="autocomplete"
+                        label="User"
+                        options={OPTIONS}
+                        getOptionLabel={(option) => option.label}
+                        isOptionEqualToValue={(option, value) => option.value === value.value}
+                        renderOption={(props, option) => (
+                          <li {...props} key={option.value}>
+                            {option.label}
+                          </li>
+                        )}
+                      />
+                    </Block>
+                    <Block label="">
+                      <RHFAutocomplete
+                        name="autocomplete"
+                        label="User"
+                        options={OPTIONS}
+                        getOptionLabel={(option) => option.label}
+                        isOptionEqualToValue={(option, value) => option.value === value.value}
+                        renderOption={(props, option) => (
+                          <li {...props} key={option.value}>
+                            {option.label}
+                          </li>
+                        )}
+                      />
+                    </Block>
+                  </Grid>
+                </Grid>
+              </TableCell>
+              <TableCell sx={{ border: '1px solid gray!important' }} width="20%">
+                <Stack spacing={1} direction="column" alignItems="center">
+                  {user.role === 'admin' && (
+                    <FormControlLabel
+                      control={
+                        <Checkbox
+                          name="checkbox2"
+                          onChange={(el) => setSignature(el.target.checked)}
+                        />
+                      }
+                      label="Firmar"
+                    />
+                  )}
+                </Stack>
+              </TableCell>
+            </TableRow>
+          </TableBody>
+        </Table>
+      </div>
+    </Grid>
   );
 
   const renderActions = (

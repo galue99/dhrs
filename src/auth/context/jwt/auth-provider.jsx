@@ -67,21 +67,22 @@ export function AuthProvider({ children }) {
         const email = JSON.parse(window.localStorage.getItem('email'));
 
         const user = {
-            "id": "8864c717-587d-472a-929a-8e5f298024da-0",
-            "displayName": email === 'demo@cortelcopr.com' ? "Demo Cortelco" : "Jesus German",
-            "email": email,
-            "password": "demo1234",
-            "photoURL": "https://api-dev-minimal-v510.vercel.app/assets/images/avatar/avatar_25.jpg",
-            "phoneNumber": "+40 777666555",
-            "country": "United States",
-            "address": "90210 Broadway Blvd",
-            "state": "California",
-            "city": "San Francisco",
-            "zipCode": "94116",
-            "about": "Praesent turpis. Phasellus viverra nulla ut metus varius laoreet. Phasellus tempus.",
-            "role": email === 'demo@cortelcopr.com' ? "operador" : "admin",
-            "isPublic": true
-        }
+          id: '8864c717-587d-472a-929a-8e5f298024da-0',
+          displayName: email === 'demo@cortelcopr.com' ? 'Demo Cortelco' : 'Jesus German',
+          email,
+          password: 'demo1234',
+          photoURL: 'https://api-dev-minimal-v510.vercel.app/assets/images/avatar/avatar_25.jpg',
+          phoneNumber: '+40 777666555',
+          country: 'United States',
+          address: '90210 Broadway Blvd',
+          state: 'California',
+          city: 'San Francisco',
+          zipCode: '94116',
+          about:
+            'Praesent turpis. Phasellus viverra nulla ut metus varius laoreet. Phasellus tempus.',
+          role: email === 'demo@cortelcopr.com' ? 'operador' : 'admin',
+          isPublic: true,
+        };
 
         dispatch({
           type: 'INITIAL',
@@ -117,7 +118,6 @@ export function AuthProvider({ children }) {
 
   // LOGIN
   const login = useCallback(async (email, password) => {
-
     const data = {
       email,
       password,
@@ -126,24 +126,26 @@ export function AuthProvider({ children }) {
     window.localStorage.setItem('email', JSON.stringify(email));
 
     const response = {
-      "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI4ODY0YzcxNy01ODdkLTQ3MmEtOTI5YS04ZTVmMjk4MDI0ZGEtMCIsImlhdCI6MTcyNDg2NjcxMSwiZXhwIjoxNzI1MTI1OTExfQ.ypZMZ7DjRI-lA2kjZW8aCuJMq_ZGEXUrort934ISjwk",
-      "user": {
-        "id": "8864c717-587d-472a-929a-8e5f298024da-0",
-        "displayName": email === 'demo@cortelcopr.com' ? "Demo Cortelco" : "Jesus German",
-        "email": email,
-        "password": "demo1234",
-        "photoURL": "https://api-dev-minimal-v510.vercel.app/assets/images/avatar/avatar_25.jpg",
-        "phoneNumber": "+40 777666555",
-        "country": "United States",
-        "address": "90210 Broadway Blvd",
-        "state": "California",
-        "city": "San Francisco",
-        "zipCode": "94116",
-        "about": "Praesent turpis. Phasellus viverra nulla ut metus varius laoreet. Phasellus tempus.",
-        "role": email === 'demo@cortelcopr.com' ? "operador" : "admin",
-        "isPublic": true
-      }
-    }
+      accessToken:
+        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI4ODY0YzcxNy01ODdkLTQ3MmEtOTI5YS04ZTVmMjk4MDI0ZGEtMCIsImlhdCI6MTcyNDg2NjcxMSwiZXhwIjoxNzI1MTI1OTExfQ.ypZMZ7DjRI-lA2kjZW8aCuJMq_ZGEXUrort934ISjwk',
+      user: {
+        id: '8864c717-587d-472a-929a-8e5f298024da-0',
+        displayName: email === 'demo@cortelcopr.com' ? 'Demo Cortelco' : 'Jesus German',
+        email,
+        password: 'demo1234',
+        photoURL: 'https://api-dev-minimal-v510.vercel.app/assets/images/avatar/avatar_25.jpg',
+        phoneNumber: '+40 777666555',
+        country: 'United States',
+        address: '90210 Broadway Blvd',
+        state: 'California',
+        city: 'San Francisco',
+        zipCode: '94116',
+        about:
+          'Praesent turpis. Phasellus viverra nulla ut metus varius laoreet. Phasellus tempus.',
+        role: email === 'demo@cortelcopr.com' ? 'operador' : 'admin',
+        isPublic: true,
+      },
+    };
 
     const { accessToken, user } = response;
 

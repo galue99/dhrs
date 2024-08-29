@@ -42,7 +42,7 @@ import {
 import OrderTableRow from '../../order/order-table-row';
 import OrderTableToolbar from '../../order/order-table-toolbar';
 import OrderTableFiltersResult from '../../order/order-table-filters-result';
-import { LIST_FORMS } from "../../../assets/data";
+import { LIST_FORMS } from '../../../assets/data';
 
 // ----------------------------------------------------------------------
 
@@ -245,23 +245,23 @@ export default function FormsListView() {
                 )
               }
               action={
-              <>
-                <Tooltip title="Download">
-                <IconButton color="primary">
-                <Iconify icon="eva:download-outline" />
-                </IconButton>
-                </Tooltip>
-                <Tooltip title="Print">
-                <IconButton color="primary">
-                <Iconify icon="solar:printer-minimalistic-bold" />
-                </IconButton>
-                </Tooltip>
-                <Tooltip title="Delete">
-                  <IconButton color="primary" onClick={confirm.onTrue}>
-                    <Iconify icon="solar:trash-bin-trash-bold" />
-                  </IconButton>
-                </Tooltip>
-              </>
+                <>
+                  <Tooltip title="Download">
+                    <IconButton color="primary">
+                      <Iconify icon="eva:download-outline" />
+                    </IconButton>
+                  </Tooltip>
+                  <Tooltip title="Print">
+                    <IconButton color="primary">
+                      <Iconify icon="solar:printer-minimalistic-bold" />
+                    </IconButton>
+                  </Tooltip>
+                  <Tooltip title="Delete">
+                    <IconButton color="primary" onClick={confirm.onTrue}>
+                      <Iconify icon="solar:trash-bin-trash-bold" />
+                    </IconButton>
+                  </Tooltip>
+                </>
               }
             />
 

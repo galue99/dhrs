@@ -14,9 +14,20 @@ import CustomPopover, { usePopover } from 'src/components/custom-popover';
 
 // ----------------------------------------------------------------------
 
-export default function FormTableRow({ row, selected, onViewRow, onSelectRow, onDeleteRow, setStep }) {
+export default function FormTableRow({
+  row,
+  selected,
+  onViewRow,
+  onSelectRow,
+  onDeleteRow,
+  setStep,
+}) {
   const { name, status, orderNumber, createdAt, customer, totalQuantity, subTotal } = row;
-  const x = [{ id: 1, action: "aprobado", name: "Jhon Doe", "date": "27-08-2024" }, { id: 2, action: "revisado", name: "Jhon Dore", "date": "27-08-2024" }, { id: 3, action: "aprobado", name: "Jhon Doe", "date": "27-08-2024" }];
+  const x = [
+    { id: 1, action: 'aprobado', name: 'Jhon Doe', date: '27-08-2024' },
+    { id: 2, action: 'revisado', name: 'Jhon Dore', date: '27-08-2024' },
+    { id: 3, action: 'aprobado', name: 'Jhon Doe', date: '27-08-2024' },
+  ];
   const confirm = useBoolean();
 
   const collapse = useBoolean();
@@ -25,7 +36,6 @@ export default function FormTableRow({ row, selected, onViewRow, onSelectRow, on
 
   const renderPrimary = (
     <TableRow hover selected={selected}>
-
       <TableCell>
         <Box
           sx={{
@@ -39,8 +49,6 @@ export default function FormTableRow({ row, selected, onViewRow, onSelectRow, on
           {name}
         </Box>
       </TableCell>
-
-
     </TableRow>
   );
 
