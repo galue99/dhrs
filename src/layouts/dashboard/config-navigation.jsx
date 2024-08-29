@@ -93,8 +93,8 @@ export function useNavData() {
             path: paths.dashboard.forms.root,
             icon: ICONS.job,
             children: [
-              { title: t('review'), path: paths.dashboard.forms.root },
               { title: t('fill'), path: paths.dashboard.forms.new },
+              { title: t('review'), path: paths.dashboard.forms.root },
             ],
           },
         ],
