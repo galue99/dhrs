@@ -29,7 +29,8 @@ import FormProvider, {
   RHFUploadAvatar,
   RHFAutocomplete,
 } from 'src/components/hook-form';
-import FancySignature from "../forms/fancy-signature.jsx";
+
+import FancySignature from "../forms/fancy-signature";
 
 // ----------------------------------------------------------------------
 

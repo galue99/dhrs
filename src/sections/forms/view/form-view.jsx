@@ -1,13 +1,12 @@
 import orderBy from 'lodash/orderBy';
 import isEqual from 'lodash/isEqual';
 import { useState, useCallback } from 'react';
+import PropTypes from "prop-types";
 
 import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 
 import { paths } from 'src/routes/paths';
-import { RouterLink } from 'src/routes/components';
 
 import { useBoolean } from 'src/hooks/use-boolean';
 
@@ -20,7 +19,6 @@ import {
   JOB_EMPLOYMENT_TYPE_OPTIONS,
 } from 'src/_mock';
 
-import Iconify from 'src/components/iconify';
 import EmptyContent from 'src/components/empty-content';
 import { useSettingsContext } from 'src/components/settings';
 import CustomBreadcrumbs from 'src/components/custom-breadcrumbs';
@@ -29,8 +27,8 @@ import JobList from '../../job/job-list';
 import JobSort from '../../job/job-sort';
 import JobSearch from '../../job/job-search';
 import JobFilters from '../../job/job-filters';
-import JobFiltersResult from '../../job/job-filters-result';
 import {LIST_FORMS} from "../../../assets/data/list_forms";
+import JobFiltersResult from '../../job/job-filters-result';
 
 // ----------------------------------------------------------------------
 
@@ -103,7 +101,7 @@ export default function FormView( { setStep }) {
         }));
       }
     },
-    [search.query]
+    [search.query, _jobs]
   );
 
   const renderFilters = (
@@ -233,4 +231,8 @@ const applyFilter = ({ inputData, filters, sortBy }) => {
   }
 
   return inputData;
+};
+
+FormView.propTypes = {
+  setStep: PropTypes.func,
 };

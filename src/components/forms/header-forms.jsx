@@ -1,10 +1,11 @@
+import Stack from '@mui/material/Stack';
+import Table from '@mui/material/Table';
+import TableRow from '@mui/material/TableRow';
 import { useTheme } from '@mui/material/styles';
 import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
 import TableCell from '@mui/material/TableCell';
-import Stack from '@mui/material/Stack';
-import { RHFRadioGroup } from '../hook-form/index.js';
-import Table from '@mui/material/Table';
+
+import { RHFRadioGroup } from '../hook-form';
 
 // ----------------------------------------------------------------------
 export const LINES = [
@@ -30,7 +31,7 @@ export default function HeaderForms() {
           </TableCell>
         </TableRow>
         <TableRow sx={{ border: '1px solid gray' }}>
-          <TableCell>"PartNumber"</TableCell>
+          <TableCell>PartNumber</TableCell>
           <TableCell sx={{ typography: 'subtitle2', backgroundColor: 'transparent' }}>
             27-7104
           </TableCell>

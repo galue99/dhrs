@@ -1,38 +1,40 @@
-import { useEffect, useState } from "react";
+import {useState, useEffect, useCallback} from "react";
+
 import Typography from "@mui/material/Typography";
+import PropTypes from "prop-types";
 
 export default function FancySignature({ name }) {
   const [hash, setHash] = useState('');
 
-  useEffect(() => {
-    setHash(generateHash(name));
-  }, [name]);
-
-  const generateHash = (name) => {
+  const generateHash = useCallback((name_signature) => {
     const date = new Date().toISOString();
     const systemId = window.navigator.userAgent;
-    const rawString = `${name}-${date}-${systemId}`;
+    const rawString = `${name_signature}-${date}-${systemId}`;
 
-    // Función hash simplificada
-    let hash = 0;
+    let new_hash = 0;
+    // eslint-disable-next-line
     for (let i = 0; i < rawString.length; i++) {
       const char = rawString.charCodeAt(i);
-      hash = (hash << 5) - hash + char;
-      hash |= 0; // Convertir a un entero de 32 bits
+      // eslint-disable-next-line no-bitwise
+      new_hash = (new_hash << 5) - new_hash + char;
+      // eslint-disable-next-line no-bitwise
+      new_hash |= 0; // Convertir a un entero de 32 bits
     }
 
-    // Convertir el hash a hexadecimal
-    let hexHash = Math.abs(hash).toString(16);
+    let hexHash = Math.abs(new_hash).toString(16);
 
-    // Ajustar la longitud a 16 caracteres (rellenar o truncar)
     if (hexHash.length < 16) {
-      hexHash = hexHash.padStart(16, '0'); // Rellenar con ceros si es más corto
+      hexHash = hexHash.padStart(16, '0');
     } else if (hexHash.length > 16) {
-      hexHash = hexHash.substring(0, 16); // Truncar si es más largo
+      hexHash = hexHash.substring(0, 16);
     }
 
     return hexHash;
-  }
+  }, []);
+
+  useEffect(() => {
+    setHash(generateHash(name));
+  }, [name, generateHash]);
 
   return (
     <div className="signature-container">
@@ -44,3 +46,7 @@ export default function FancySignature({ name }) {
     </div>
   );
 }
+
+FancySignature.propTypes = {
+  name: PropTypes.string,
+};

@@ -4,7 +4,6 @@ import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
-import Avatar from '@mui/material/Avatar';
 import Collapse from '@mui/material/Collapse';
 import MenuItem from '@mui/material/MenuItem';
 import TableRow from '@mui/material/TableRow';
@@ -15,19 +14,23 @@ import ListItemText from '@mui/material/ListItemText';
 
 import { useBoolean } from 'src/hooks/use-boolean';
 
-import { fCurrency } from 'src/utils/format-number';
 import { fDate, fTime } from 'src/utils/format-time';
 
 import Label from 'src/components/label';
 import Iconify from 'src/components/iconify';
 import { ConfirmDialog } from 'src/components/custom-dialog';
 import CustomPopover, { usePopover } from 'src/components/custom-popover';
-import {useAuthContext} from "../../auth/hooks/index.js";
+
+import {useAuthContext} from "../../auth/hooks";
 
 // ----------------------------------------------------------------------
 
 export default function OrderTableRow({ row, selected, onViewRow, onSelectRow, onDeleteRow }) {
   const { user } = useAuthContext();
+
+  const confirm = useBoolean();
+  const collapse = useBoolean();
+  const popover = usePopover();
 
   const { items, status, orderNumber, createdAt, customer, totalQuantity, subTotal } = row;
 
@@ -35,12 +38,11 @@ export default function OrderTableRow({ row, selected, onViewRow, onSelectRow, o
     return null;
   }
 
-  const x = [{ id: 1, action: "Creado", name: "Juan Pablo Donalisio", "date": "27-08-2024" }, { id: 2, action: "REvisado", name: "Edgar Espinetti", "date": "27-08-2024" }, { id: 3, action: "Aprobado", name: "Jesus German", "date": "27-08-2024" }];
-  const confirm = useBoolean();
-
-  const collapse = useBoolean();
-
-  const popover = usePopover();
+  const x = [
+    { id: 1, action: "Creado", name: "Juan Pablo Donalisio", date: "27-08-2024" },
+    { id: 2, action: "Revisado", name: "Edgar Espinetti", date: "27-08-2024" },
+    { id: 3, action: "Aprobado", name: "Jesus German", date: "27-08-2024" },
+  ];
 
   const renderPrimary = (
     <TableRow hover selected={selected}>
@@ -62,20 +64,6 @@ export default function OrderTableRow({ row, selected, onViewRow, onSelectRow, o
         </Box>
       </TableCell>
 
-      {/*<TableCell sx={{ display: 'flex', alignItems: 'center' }}>
-        <Avatar alt={customer.name} src={customer.avatarUrl} sx={{ mr: 2 }} />
-
-        <ListItemText
-          primary={customer.name}
-          secondary={customer.email}
-          primaryTypographyProps={{ typography: 'body2' }}
-          secondaryTypographyProps={{
-            component: 'span',
-            color: 'text.disabled',
-          }}
-        />
-      </TableCell>*/}
-
       <TableCell>
         <ListItemText
           primary={fDate(createdAt)}
@@ -88,10 +76,6 @@ export default function OrderTableRow({ row, selected, onViewRow, onSelectRow, o
           }}
         />
       </TableCell>
-
-    {/*  <TableCell align="center"> {totalQuantity} </TableCell>
-
-      <TableCell> {fCurrency(subTotal)} </TableCell>*/}
 
       <TableCell>
         <Label
@@ -149,12 +133,6 @@ export default function OrderTableRow({ row, selected, onViewRow, onSelectRow, o
                   },
                 }}
               >
-                {/*<Avatar
-                  src={item.coverUrl}
-                  variant="rounded"
-                  sx={{ width: 48, height: 48, mr: 2 }}
-                />*/}
-
                 <ListItemText
                   primary={item.action.toUpperCase()}
                   secondary={item.name}
@@ -225,6 +203,14 @@ export default function OrderTableRow({ row, selected, onViewRow, onSelectRow, o
     </>
   );
 }
+
+OrderTableRow.propTypes = {
+  row: PropTypes.object,
+  selected: PropTypes.bool,
+  onViewRow: PropTypes.func,
+  onDeleteRow: PropTypes.func,
+  onSelectRow: PropTypes.func,
+};
 
 OrderTableRow.propTypes = {
   row: PropTypes.object,

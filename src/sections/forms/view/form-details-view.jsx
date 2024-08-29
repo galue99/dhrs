@@ -12,9 +12,9 @@ import { _jobs, JOB_DETAILS_TABS, JOB_PUBLISH_OPTIONS } from 'src/_mock';
 import Label from 'src/components/label';
 import { useSettingsContext } from 'src/components/settings';
 
-import FormDetailsToolbar from '../form-details-toolbar.jsx';
-import FormDetailsContent from '../form-details-content.jsx';
-import FormDetailsCandidates from '../form-details-candidates.jsx';
+import FormDetailsToolbar from '../form-details-toolbar';
+import FormDetailsContent from '../form-details-content';
+import FormDetailsCandidates from '../form-details-candidates';
 
 // ----------------------------------------------------------------------
 

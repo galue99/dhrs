@@ -1,20 +1,29 @@
 import * as Yup from 'yup';
 import PropTypes from 'prop-types';
-import {useMemo, useEffect, useState} from 'react';
+import { useForm } from 'react-hook-form';
+import {useMemo, useState, useEffect} from 'react';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { useForm, Controller } from 'react-hook-form';
 
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import Stack from '@mui/material/Stack';
+import Table from '@mui/material/Table';
+import TableRow from '@mui/material/TableRow';
+import Checkbox from "@mui/material/Checkbox";
 import Grid from '@mui/material/Unstable_Grid2';
+import TableHead from '@mui/material/TableHead';
+import TableCell from '@mui/material/TableCell';
+import TableBody from '@mui/material/TableBody';
 import CardHeader from '@mui/material/CardHeader';
 import Typography from '@mui/material/Typography';
+import LoadingButton from '@mui/lab/LoadingButton';
+import FormControlLabel from '@mui/material/FormControlLabel';
 
 import { paths } from 'src/routes/paths';
 import { useRouter } from 'src/routes/hooks';
 
 import { useResponsive } from 'src/hooks/use-responsive';
+
 import { _roles } from 'src/_mock';
 
 import { useSnackbar } from 'src/components/snackbar';
@@ -22,27 +31,13 @@ import FormProvider, {
   RHFEditor,
   RHFTextField,
   RHFRadioGroup,
-  RHFAutocomplete,
-  RHFCheckbox
+  RHFAutocomplete
 } from 'src/components/hook-form';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import TableCell from '@mui/material/TableCell';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TextField from '@mui/material/TextField';
-import HeaderForms from '../../components/forms/header-forms';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Switch from '@mui/material/Switch';
-import LoadingButton from '@mui/lab/LoadingButton';
+
 import {fDate} from "../../utils/format-time";
-import InputLabel from "@mui/material/InputLabel";
-import Select from "@mui/material/Select";
-import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
-import FancySignature from "./fancy-signature.jsx";
 import {useAuthContext} from "../../auth/hooks";
-import Checkbox from "@mui/material/Checkbox";
+import FancySignature from "./fancy-signature";
+import HeaderForms from '../../components/forms/header-forms';
 
 export const TURNS = [
   { value: '1', label: '1' },
@@ -177,8 +172,7 @@ export default function FormNewEditForm({ currentJob, setStep, review }) {
   );
 
   const renderProperties = (
-    <>
-      <Grid xs={12} md={12}>
+    <Grid xs={12} md={12}>
         <Stack spacing={3} sx={{ p: 3 }}>
           <Typography variant="body2" sx={{ mb: 0.5, textAlign: 'center' }}>
             FM-WI-1776-18 DHR PARA LEUKO PARA LINEAS MANUALES 22, 23 Y 24 REV 06
@@ -205,8 +199,8 @@ export default function FormNewEditForm({ currentJob, setStep, review }) {
                   width="25%"
                   sx={{ typography: 'subtitle2', backgroundColor: 'transparent' }}
                 >
-                  <FancySignature name={'David Jenkins'} />
-                  {/*<Block label="">
+                  <FancySignature name="David Jenkins" />
+                  {/* <Block label="">
                     <RHFAutocomplete
                       name="autocomplete"
                       label="Preparado por:"
@@ -220,7 +214,7 @@ export default function FormNewEditForm({ currentJob, setStep, review }) {
                         </li>
                       )}
                     />
-                  </Block>*/}
+                  </Block> */}
                   {fDate(new Date())}</TableCell>
                 <TableCell width="25%">Revisado Por:</TableCell>
                 <TableCell
@@ -445,7 +439,6 @@ export default function FormNewEditForm({ currentJob, setStep, review }) {
           </Table>
         </div>
       </Grid>
-    </>
   );
 
   const renderActions = (
@@ -462,7 +455,7 @@ export default function FormNewEditForm({ currentJob, setStep, review }) {
           onClick={() => setStep(0)}
           sx={{ ml: 2 }}
         >
-          {'Cancelar'}
+          Cancelar
         </LoadingButton>
         <LoadingButton
           type="button"

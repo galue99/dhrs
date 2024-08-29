@@ -1,12 +1,13 @@
+import { useState } from 'react';
+import PropTypes from "prop-types";
+
 import Container from '@mui/material/Container';
 
 import { useSettingsContext } from 'src/components/settings';
 
-import { useState } from 'react';
-
+import FormsView from "./form-view";
 import FormNewEditForm from '../form-new-edit-form';
 import FormNewEditForm2 from '../form-new-edit-form2';
-import FormsView from "./form-view";
 
 // ----------------------------------------------------------------------
 
@@ -17,7 +18,7 @@ export default function FormCreateView({ id }) {
 
   return (
     <Container maxWidth={settings.themeStretch ? false : 'lg'}>
-      {/*<CustomBreadcrumbs
+      {/* <CustomBreadcrumbs
         heading="Create a new form"
         links={[
           {
@@ -33,7 +34,7 @@ export default function FormCreateView({ id }) {
         sx={{
           mb: { xs: 3, md: 5 },
         }}
-      />*/}
+      /> */}
 
       {step === 0 && <FormsView setStep={setStep} />}
       {step === 1 && <FormNewEditForm setStep={setStep} review={id !== undefined} />}
@@ -41,3 +42,7 @@ export default function FormCreateView({ id }) {
     </Container>
   );
 }
+
+FormCreateView.propTypes = {
+  id: PropTypes.number,
+};

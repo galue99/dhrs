@@ -5,6 +5,7 @@ import { paths } from 'src/routes/paths';
 import { useTranslate } from 'src/locales';
 
 import SvgColor from 'src/components/svg-color';
+
 import { useAuthContext } from "../../auth/hooks";
 
 // ----------------------------------------------------------------------

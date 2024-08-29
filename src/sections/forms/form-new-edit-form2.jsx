@@ -1,43 +1,36 @@
 import * as Yup from 'yup';
 import PropTypes from 'prop-types';
+import { useForm } from 'react-hook-form';
 import { useMemo, useEffect } from 'react';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { useForm, Controller } from 'react-hook-form';
 
 import Box from '@mui/material/Box';
-import Chip from '@mui/material/Chip';
 import Card from '@mui/material/Card';
-import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
-import Switch from '@mui/material/Switch';
+import Table from '@mui/material/Table';
+import TableRow from '@mui/material/TableRow';
 import Grid from '@mui/material/Unstable_Grid2';
-import ButtonBase from '@mui/material/ButtonBase';
+import TableCell from '@mui/material/TableCell';
+import TableBody from '@mui/material/TableBody';
+import TextField from '@mui/material/TextField';
 import CardHeader from '@mui/material/CardHeader';
 import Typography from '@mui/material/Typography';
 import LoadingButton from '@mui/lab/LoadingButton';
-import InputAdornment from '@mui/material/InputAdornment';
-import { DatePicker } from '@mui/x-date-pickers/DatePicker';
-import FormControlLabel from '@mui/material/FormControlLabel';
 
 import { paths } from 'src/routes/paths';
 import { useRouter } from 'src/routes/hooks';
 
 import { useResponsive } from 'src/hooks/use-responsive';
+
 import { _roles } from 'src/_mock';
 
 import { useSnackbar } from 'src/components/snackbar';
 import FormProvider, {
   RHFEditor,
-  RHFTextField,
-  RHFRadioGroup,
   RHFCheckbox,
+  RHFTextField,
 } from 'src/components/hook-form';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import TableCell from '@mui/material/TableCell';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TextField from '@mui/material/TextField';
+
 import HeaderForms from '../../components/forms/header-forms';
 
 export const TURNS = [
@@ -158,8 +151,7 @@ export default function FormNewEditForm2({ currentJob, setStep }) {
   );
 
   const renderProperties = (
-    <>
-      <Grid xs={12} md={12}>
+    <Grid xs={12} md={12}>
         <Stack spacing={3} sx={{ p: 3 }}>
           <Typography variant="body2" sx={{ mb: 0.5, textAlign: 'center' }}>
             FM-WI-1776-18 DHR PARA LEUKO PARA LINEAS MANUALES 22, 23 Y 24 REV 06
@@ -181,9 +173,9 @@ export default function FormNewEditForm2({ currentJob, setStep }) {
                   width="70%"
                   sx={{ typography: 'subtitle2', backgroundColor: 'transparent' }}
                 >
-                  Si está comenzando una nueva orden proceda a realizar el "Line Clearance". De no
-                  ser asi marque No Requerido. Para los "part numbers" 27-7086 y 27-7141 seleccionen
-                  o requerido para la Estación de Corte. N oReq Clearance Para los "part numbers"
+                  Si está comenzando una nueva orden proceda a realizar el Line Clearance. De no
+                  ser asi marque No Requerido. Para los part numbers 27-7086 y 27-7141 seleccionen
+                  o requerido para la Estación de Corte. N oReq Clearance Para los part numbers
                   27-7105. 27-7086. 27-7104. 27-7124, 27-7136. 27-7115. 27-7081, 27-7129. 27-
                   7117.27-7111.27-7083.27-7110, 27-7082 y 27-7107 seleccione no requerido para la
                   Estación de Tampo.
@@ -215,7 +207,7 @@ export default function FormNewEditForm2({ currentJob, setStep }) {
                     <Grid item md={7} xs={12} sx={{ backgroundColor: 'rgba(145, 158, 171, 0.12)' }}>
                       <Typography variant="h6" sx={{ textAlign: 'left' }}>
                         Tarea Operador de Estación de Corte Nota: Otro operador verificara tarea
-                        realizada por "sheetcutter"
+                        realizada por sheetcutter
                       </Typography>
                       <ol>
                         <li>
@@ -272,7 +264,7 @@ export default function FormNewEditForm2({ currentJob, setStep }) {
                     <Grid item md={7} xs={12} sx={{ backgroundColor: 'rgba(145, 158, 171, 0.12)' }}>
                       <Typography variant="h6" sx={{ textAlign: 'left' }}>
                         Tarea Operador de Estación de Corte Nota: Otro operador verificara tarea
-                        realizada por "sheetcutter"
+                        realizada por sheetcutter
                       </Typography>
                       <ol>
                         <li>
@@ -329,7 +321,7 @@ export default function FormNewEditForm2({ currentJob, setStep }) {
                     <Grid item md={7} xs={12} sx={{ backgroundColor: 'rgba(145, 158, 171, 0.12)' }}>
                       <Typography variant="h6" sx={{ textAlign: 'left' }}>
                         Tarea Operador de Estación de Corte Nota: Otro operador verificara tarea
-                        realizada por "sheetcutter"
+                        realizada por sheetcutter
                       </Typography>
                       <ol>
                         <li>
@@ -386,7 +378,7 @@ export default function FormNewEditForm2({ currentJob, setStep }) {
                     <Grid item md={7} xs={12} sx={{ backgroundColor: 'rgba(145, 158, 171, 0.12)' }}>
                       <Typography variant="h6" sx={{ textAlign: 'left' }}>
                         Tarea Operador de Estación de Corte Nota: Otro operador verificara tarea
-                        realizada por "sheetcutter"
+                        realizada por sheetcutter
                       </Typography>
                       <ol>
                         <li>
@@ -443,7 +435,7 @@ export default function FormNewEditForm2({ currentJob, setStep }) {
                     <Grid item md={7} xs={12} sx={{ backgroundColor: 'rgba(145, 158, 171, 0.12)' }}>
                       <Typography variant="h6" sx={{ textAlign: 'left' }}>
                         Tarea Operador de Estación de Corte Nota: Otro operador verificara tarea
-                        realizada por "sheetcutter"
+                        realizada por sheetcutter
                       </Typography>
                       <ol>
                         <li>
@@ -500,7 +492,6 @@ export default function FormNewEditForm2({ currentJob, setStep }) {
           <Box sx={{ height: '10px', position: 'relative' }} />
         </div>
       </Grid>
-    </>
   );
 
   const renderActions = (
@@ -517,7 +508,7 @@ export default function FormNewEditForm2({ currentJob, setStep }) {
           onClick={() => setStep(1)}
           sx={{ ml: 2 }}
         >
-          {'Cancelar'}
+          Cancelar
         </LoadingButton>
         <LoadingButton
           type="button"

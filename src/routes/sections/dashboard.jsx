@@ -12,9 +12,13 @@ import { LoadingScreen } from 'src/components/loading-screen';
 const IndexPage = lazy(() => import('src/pages/dashboard/app'));
 
 // USERS
+// eslint-disable-next-line import/no-unresolved
 const UserProfilePage = lazy(() => import('src/pages/dashboard/user/profile'));
+// eslint-disable-next-line import/no-unresolved
 const UserCardsPage = lazy(() => import('src/pages/dashboard/user/cards'));
+// eslint-disable-next-line import/no-unresolved
 const UserListPage = lazy(() => import('src/pages/dashboard/user/list'));
+// eslint-disable-next-line import/no-unresolved
 const UserAccountPage = lazy(() => import('src/pages/dashboard/user/account'));
 const UserCreatePage = lazy(() => import('src/pages/dashboard/user/new'));
 const UserEditPage = lazy(() => import('src/pages/dashboard/user/edit'));
