@@ -282,7 +282,7 @@ export default function FormNewEditForm({ currentJob, setStep, review }) {
               <TableRow>
                 <TableCell sx={{ border: '1px solid gray!important' }} width="20%">
                   <Stack spacing={1} direction="column" alignItems="center">
-                    <RHFRadioGroup row={false} spacing={4} name="turno" options={TURNS} value={review ? 1 : null} />
+                    <RHFRadioGroup row={false} spacing={4} name="turno" options={TURNS} value={review ? 1 : undefined} />
                   </Stack>
                 </TableCell>
                 <TableCell colSpan={1} sx={{ border: '1px solid gray!important' }} width="50%">
@@ -305,7 +305,7 @@ export default function FormNewEditForm({ currentJob, setStep, review }) {
                       <Block label="">
                         <RHFAutocomplete
                           name="autocomplete"
-                          label="Autocomplete"
+                          label="User"
                           options={OPTIONS}
                           getOptionLabel={(option) => option.label}
                           isOptionEqualToValue={(option, value) => option.value === value.value}
@@ -319,7 +319,7 @@ export default function FormNewEditForm({ currentJob, setStep, review }) {
                       <Block label="">
                         <RHFAutocomplete
                           name="autocomplete"
-                          label="Autocomplete"
+                          label="User"
                           options={OPTIONS}
                           getOptionLabel={(option) => option.label}
                           isOptionEqualToValue={(option, value) => option.value === value.value}
@@ -349,7 +349,7 @@ export default function FormNewEditForm({ currentJob, setStep, review }) {
                       <Block label="">
                         <RHFAutocomplete
                           name="autocomplete"
-                          label="Autocomplete"
+                          label="User"
                           options={OPTIONS}
                           getOptionLabel={(option) => option.label}
                           isOptionEqualToValue={(option, value) => option.value === value.value}
@@ -363,7 +363,7 @@ export default function FormNewEditForm({ currentJob, setStep, review }) {
                       <Block label="">
                         <RHFAutocomplete
                           name="autocomplete"
-                          label="Autocomplete"
+                          label="User"
                           options={OPTIONS}
                           getOptionLabel={(option) => option.label}
                           isOptionEqualToValue={(option, value) => option.value === value.value}
@@ -393,7 +393,7 @@ export default function FormNewEditForm({ currentJob, setStep, review }) {
                       <Block label="">
                         <RHFAutocomplete
                           name="autocomplete"
-                          label="Autocomplete"
+                          label="User"
                           options={OPTIONS}
                           getOptionLabel={(option) => option.label}
                           isOptionEqualToValue={(option, value) => option.value === value.value}
@@ -407,7 +407,7 @@ export default function FormNewEditForm({ currentJob, setStep, review }) {
                       <Block label="">
                         <RHFAutocomplete
                           name="autocomplete"
-                          label="Autocomplete"
+                          label="User"
                           options={OPTIONS}
                           getOptionLabel={(option) => option.label}
                           isOptionEqualToValue={(option, value) => option.value === value.value}

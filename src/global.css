@@ -28,13 +28,11 @@
 .signature-name {
   font-family: 'Great Vibes', cursive;
   font-size: 36px;
-  color: #fff;
   margin: 0;
 }
 
 .signature-hash {
   font-family: 'Courier New', Courier, monospace;
   font-size: 14px;
-  color: #fff;
   margin-top: 10px;
 }

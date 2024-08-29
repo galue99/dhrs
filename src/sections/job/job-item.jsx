@@ -46,7 +46,7 @@ export default function JobItem({ job, onView, onEdit, onDelete, setStep }) {
           <ListItemText
             sx={{ mb: 1 }}
             primary={
-              <Link component={RouterLink} href={paths.dashboard.job.details(id)} color="inherit">
+              <Link component={RouterLink} color="inherit">
                 {title}
               </Link>
             }
