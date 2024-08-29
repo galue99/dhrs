@@ -28,6 +28,7 @@ import { useSnackbar } from 'src/components/snackbar';
 import FormProvider, { RHFEditor, RHFCheckbox, RHFTextField } from 'src/components/hook-form';
 
 import HeaderForms from '../../components/forms/header-forms';
+import FancySignature from "./fancy-signature";
 
 export const TURNS = [
   { value: '1', label: '1' },
@@ -248,8 +249,14 @@ export default function FormNewEditForm2({ currentJob, setStep }) {
                       Verificado por/Fecha:
                       <RHFCheckbox name="checkbox" label="No Requerido" />
                     </Typography>
-                    <Box>Firma:</Box>
-                    <Box>Firma:</Box>
+                    <Box>Firma:
+                      <FancySignature name="David Jenkins" />
+
+                    </Box>
+                    <Box>Firma:
+                      <FancySignature name="Jesus German" />
+
+                    </Box>
                   </Grid>
                 </Grid>
               </TableCell>
@@ -305,8 +312,14 @@ export default function FormNewEditForm2({ currentJob, setStep }) {
                       Verificado por/Fecha:
                       <RHFCheckbox name="checkbox" label="No Requerido" />
                     </Typography>
-                    <Box>Firma:</Box>
-                    <Box>Firma:</Box>
+                    <Box>Firma:
+                      <FancySignature name="David Jenkins" />
+
+                    </Box>
+                    <Box>Firma:
+                      <FancySignature name="Jesus German" />
+
+                    </Box>
                   </Grid>
                 </Grid>
               </TableCell>
@@ -362,8 +375,14 @@ export default function FormNewEditForm2({ currentJob, setStep }) {
                       Verificado por/Fecha:
                       <RHFCheckbox name="checkbox" label="No Requerido" />
                     </Typography>
-                    <Box>Firma:</Box>
-                    <Box>Firma:</Box>
+                    <Box>Firma:
+                      <FancySignature name="David Jenkins" />
+
+                    </Box>
+                    <Box>Firma:
+                      <FancySignature name="Jesus German" />
+
+                    </Box>
                   </Grid>
                 </Grid>
               </TableCell>
@@ -419,8 +438,14 @@ export default function FormNewEditForm2({ currentJob, setStep }) {
                       Verificado por/Fecha:
                       <RHFCheckbox name="checkbox" label="No Requerido" />
                     </Typography>
-                    <Box>Firma:</Box>
-                    <Box>Firma:</Box>
+                    <Box>Firma:
+                      <FancySignature name="David Jenkins" />
+
+                    </Box>
+                    <Box>Firma:
+                      <FancySignature name="Jesus German" />
+
+                    </Box>
                   </Grid>
                 </Grid>
               </TableCell>
@@ -476,8 +501,14 @@ export default function FormNewEditForm2({ currentJob, setStep }) {
                       Verificado por/Fecha:
                       <RHFCheckbox name="checkbox" label="No Requerido" />
                     </Typography>
-                    <Box>Firma:</Box>
-                    <Box>Firma:</Box>
+                    <Box>Firma:
+                      <FancySignature name="David Jenkins" />
+
+                    </Box>
+                    <Box>Firma:
+                      <FancySignature name="Jesus German" />
+
+                    </Box>
                   </Grid>
                 </Grid>
               </TableCell>
