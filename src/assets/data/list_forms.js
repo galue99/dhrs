@@ -6,6 +6,7 @@ export const LIST_FORMS = [
       "price": 83.74,
       "negotiable": true
     },
+    "status": "completed",
     "publish": "draft",
     "company": {
       "name": "Lueilwitz and Sons",
@@ -123,6 +124,7 @@ export const LIST_FORMS = [
       "price": 97.14,
       "negotiable": true
     },
+    "status": "completed",
     "publish": "published",
     "company": {
       "name": "Gleichner, Mueller and Tromp",
@@ -241,6 +243,7 @@ export const LIST_FORMS = [
       "price": 68.71,
       "negotiable": true
     },
+    "status": "pending",
     "publish": "published",
     "company": {
       "name": "Nikolaus - Leuschke",
@@ -360,6 +363,7 @@ export const LIST_FORMS = [
       "price": 85.21,
       "negotiable": false
     },
+    "status": "completed",
     "publish": "draft",
     "company": {
       "name": "Hegmann, Kreiger and Bayer",
@@ -480,6 +484,7 @@ export const LIST_FORMS = [
       "price": 52.17,
       "negotiable": false
     },
+    "status": "completed",
     "publish": "published",
     "company": {
       "name": "Grimes Inc",
@@ -601,6 +606,7 @@ export const LIST_FORMS = [
       "price": 25.18,
       "negotiable": true
     },
+    "status": "completed",
     "publish": "published",
     "company": {
       "name": "Durgan - Murazik",
@@ -723,6 +729,7 @@ export const LIST_FORMS = [
       "price": 43.84,
       "negotiable": false
     },
+    "status": "completed",
     "publish": "draft",
     "company": {
       "name": "Altenwerth, Medhurst and Roberts",
@@ -846,6 +853,7 @@ export const LIST_FORMS = [
       "price": 60.98,
       "negotiable": false
     },
+    "status": "completed",
     "publish": "published",
     "company": {
       "name": "Raynor Group",
@@ -970,6 +978,7 @@ export const LIST_FORMS = [
       "price": 98.42,
       "negotiable": false
     },
+    "status": "pending",
     "publish": "published",
     "company": {
       "name": "Mraz, Donnelly and Collins",
@@ -1095,6 +1104,7 @@ export const LIST_FORMS = [
       "price": 53.37,
       "negotiable": false
     },
+    "status": "completed",
     "publish": "draft",
     "company": {
       "name": "Padberg - Bailey",
@@ -1221,6 +1231,7 @@ export const LIST_FORMS = [
       "price": 72.75,
       "negotiable": true
     },
+    "status": "completed",
     "publish": "published",
     "company": {
       "name": "Heidenreich, Stokes and Parker",
@@ -1348,6 +1359,7 @@ export const LIST_FORMS = [
       "price": 56.61,
       "negotiable": true
     },
+    "status": "pending",
     "publish": "published",
     "company": {
       "name": "Pagac and Sons",
@@ -1476,6 +1488,7 @@ export const LIST_FORMS = [
       "price": 56.61,
       "negotiable": true
     },
+    "status": "completed",
     "publish": "published",
     "company": {
       "name": "Pagac and Sons",
@@ -1604,6 +1617,7 @@ export const LIST_FORMS = [
       "price": 56.61,
       "negotiable": true
     },
+    "status": "completed",
     "publish": "published",
     "company": {
       "name": "Pagac and Sons",

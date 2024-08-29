@@ -90,7 +90,7 @@ export function useNavData() {
           // Forms
           {
             title: t('forms'),
-            path: paths.dashboard.job.root,
+            path: paths.dashboard.forms.root,
             icon: ICONS.job,
             children: [
               { title: t('review'), path: paths.dashboard.forms.root },
@@ -99,26 +99,7 @@ export function useNavData() {
           },
         ],
       },
-
       // CONFIGURATIONS (solo si es admin)
-      ...(isAdmin
-        ? [
-          {
-            subheader: t('configurations'),
-            items: [
-              {
-                title: t('configurations'),
-                path: paths.dashboard.job.root,
-                icon: ICONS.lock,
-                children: [
-                  { title: t('list'), path: paths.dashboard.forms.root },
-                  { title: t('create'), path: paths.dashboard.forms.new },
-                ],
-              },
-            ],
-          },
-        ]
-        : []),
     ],
     [t, isAdmin]
   );

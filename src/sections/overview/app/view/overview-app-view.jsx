@@ -24,7 +24,7 @@ export default function OverviewAppView() {
       <Grid container spacing={3}>
         <Grid xs={12} md={4}>
           <AppWidgetSummary
-            title="Total Active Users"
+            title="Total Forms Completed"
             percent={2.6}
             total={18765}
             chart={{
@@ -35,7 +35,7 @@ export default function OverviewAppView() {
 
         <Grid xs={12} md={4}>
           <AppWidgetSummary
-            title="Total Installed"
+            title="Total Forms Pending"
             percent={0.2}
             total={4876}
             chart={{
@@ -47,7 +47,7 @@ export default function OverviewAppView() {
 
         <Grid xs={12} md={4}>
           <AppWidgetSummary
-            title="Total Downloads"
+            title="Total Users Active"
             percent={-0.1}
             total={678}
             chart={{
@@ -59,13 +59,13 @@ export default function OverviewAppView() {
 
         <Grid xs={12} md={6} lg={4}>
           <AppCurrentDownload
-            title="Current Download"
+            title="Forms Completed"
             chart={{
               series: [
-                { label: 'Mac', value: 12244 },
-                { label: 'Window', value: 53345 },
-                { label: 'iOS', value: 44313 },
-                { label: 'Android', value: 78343 },
+                { label: 'FM-WI-9775-01', value: 12244 },
+                { label: 'FM-WI-1776-04', value: 53345 },
+                { label: 'FM-WI-OP-0180-01', value: 44313 },
+                { label: 'FM-WI-1776-22', value: 78343 },
               ],
             }}
           />
@@ -73,7 +73,7 @@ export default function OverviewAppView() {
 
         <Grid xs={12} md={6} lg={8}>
           <AppAreaInstalled
-            title="Area Installed"
+            title="Forms completed by months"
             subheader="(+43%) than last year"
             chart={{
               categories: [
@@ -95,11 +95,11 @@ export default function OverviewAppView() {
                   year: '2024',
                   data: [
                     {
-                      name: 'Asia',
+                      name: 'FM-WI-1776-22',
                       data: [10, 41, 35, 51, 49, 62, 69, 91, 148, 35, 51, 49],
                     },
                     {
-                      name: 'America',
+                      name: 'FM-WI-9775-01',
                       data: [10, 34, 13, 56, 77, 88, 99, 77, 45, 13, 56, 77],
                     },
                   ],
@@ -108,11 +108,11 @@ export default function OverviewAppView() {
                   year: '2023',
                   data: [
                     {
-                      name: 'Asia',
+                      name: 'FM-WI-1776-22',
                       data: [51, 35, 41, 10, 91, 69, 62, 148, 91, 69, 62, 49],
                     },
                     {
-                      name: 'America',
+                      name: 'FM-WI-9775-01',
                       data: [56, 13, 34, 10, 77, 99, 88, 45, 77, 99, 88, 77],
                     },
                   ],

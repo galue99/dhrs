@@ -32,8 +32,8 @@ export default function OrderTableRow({ row, selected, onViewRow, onSelectRow, o
   const collapse = useBoolean();
   const popover = usePopover();
 
-  const { items, status, orderNumber, createdAt, customer, totalQuantity, subTotal } = row;
-
+  const { title, status, text, orderNumber, createdAt, customer, totalQuantity, subTotal, candidates } = row;
+  console.log(candidates)
   if (user.role === 'operador' && status === 'pending') {
     return null;
   }
@@ -60,8 +60,14 @@ export default function OrderTableRow({ row, selected, onViewRow, onSelectRow, o
             },
           }}
         >
-          {orderNumber}
+          {title}
         </Box>
+      </TableCell>
+      <TableCell sx={{ color: 'text.secondary', whiteSpace: 'nowrap' }}>
+          {text}
+      </TableCell>
+      <TableCell sx={{ color: 'text.secondary', whiteSpace: 'nowrap' }}>
+          {candidates[0].name}
       </TableCell>
 
       <TableCell>

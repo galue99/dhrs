@@ -35,13 +35,14 @@ export default function JobItem({ job, onView, onEdit, onDelete, setStep }) {
         </IconButton>
 
         <Stack sx={{ p: 3, pb: 2 }}>
-          <Avatar
-            alt={company.name}
-            src={company.logo}
-            variant="rounded"
-            sx={{ width: 48, height: 48, mb: 2 }}
-          />
-
+          {/*
+            <Avatar
+              alt={company.name}
+              src={company.logo}
+              variant="rounded"
+              sx={{ width: 48, height: 48, mb: 2 }}
+            />
+          */}
           <ListItemText
             sx={{ mb: 1 }}
             primary={
