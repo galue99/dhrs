@@ -245,11 +245,23 @@ export default function FormsListView() {
                 )
               }
               action={
+              <>
+                <Tooltip title="Download">
+                <IconButton color="primary">
+                <Iconify icon="eva:download-outline" />
+                </IconButton>
+                </Tooltip>
+                <Tooltip title="Print">
+                <IconButton color="primary">
+                <Iconify icon="solar:printer-minimalistic-bold" />
+                </IconButton>
+                </Tooltip>
                 <Tooltip title="Delete">
                   <IconButton color="primary" onClick={confirm.onTrue}>
                     <Iconify icon="solar:trash-bin-trash-bold" />
                   </IconButton>
                 </Tooltip>
+              </>
               }
             />
 
