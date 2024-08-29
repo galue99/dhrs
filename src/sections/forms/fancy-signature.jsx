@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 
 import Typography from '@mui/material/Typography';
 import PropTypes from 'prop-types';
+import {fDate} from "../../utils/format-time";
 
 export default function FancySignature({ name }) {
   const [hash, setHash] = useState('');
@@ -51,6 +52,13 @@ export default function FancySignature({ name }) {
         sx={{ fontFamily: 'Courier New, Courier, monospace' }}
       >
         Signature ID: {hash}
+      </Typography>
+      <Typography
+        variant="h6"
+        className="signature-hash"
+        sx={{ fontFamily: 'Courier New, Courier, monospace' }}
+      >
+        {fDate(new Date())}
       </Typography>
     </div>
   );

@@ -216,7 +216,6 @@ export default function FormNewEditForm({ currentJob, setStep, review }) {
                       )}
                     />
                   </Block> */}
-                {fDate(new Date())}
               </TableCell>
               <TableCell width="25%">Revisado Por:</TableCell>
               <TableCell
@@ -224,10 +223,7 @@ export default function FormNewEditForm({ currentJob, setStep, review }) {
                 sx={{ typography: 'subtitle2', backgroundColor: 'transparent' }}
               >
                 {signature && user.role === 'admin' && (
-                  <>
                     <FancySignature name={user?.displayName} />
-                    {fDate(new Date())}
-                  </>
                 )}
               </TableCell>
             </TableRow>
